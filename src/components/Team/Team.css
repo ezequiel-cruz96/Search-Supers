@@ -1,0 +1,63 @@
+.contenedor_carta2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+}
+
+/* Estilos de cart */
+
+.cart-team{
+    width:302px ;
+    height: 500px;
+    border: solid gray 1px;
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    animation-name: girar;
+    animation-duration: 1.2s;
+    animation-iteration-count: inherit;
+    animation-timing-function: linear;
+    
+  }
+  
+  @keyframes girar {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+.card-title{
+    text-align: center;
+    
+}
+.card-image{
+    width:300px ;
+    height: 300px;
+}
+.card-stats{
+    font-size: 12px;
+    display: grid;
+    grid-template-columns:  100px 100px 100px ;
+    grid-row: 50px;
+}
+.card-control{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.card-control-good{
+    font-size:25px;
+    text-transform: capitalize;
+    color: green;
+}
+.card-control-bad{
+    font-size:25px;
+    text-transform: capitalize;
+    color: red;
+}
+h1{
+  text-align: center;
+}

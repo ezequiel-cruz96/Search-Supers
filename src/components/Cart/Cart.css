@@ -1,0 +1,52 @@
+.cart{
+    width:302px ;
+    height: 500px;
+    border: solid gray 1px;
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    margin-top: 20px;
+  }
+  
+
+.card-title{
+    text-align: center;
+    
+}
+.card-image{
+    width:300px ;
+    height: 300px;
+}
+.card-stats{
+    font-size: 12px;
+    display: grid;
+    grid-template-columns:  100px 100px 100px ;
+    grid-row: 50px;
+}
+.card-control{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.card-control-good{
+    font-size:25px;
+    text-transform: capitalize;
+    color: green;
+}
+.card-control-bad{
+    font-size:25px;
+    text-transform: capitalize;
+    color: red;
+}
+.contenedor_carta{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.contenedor_equipo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+   
+
+}

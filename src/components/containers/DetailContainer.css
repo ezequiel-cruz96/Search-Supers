@@ -1,0 +1,20 @@
+.contenedor__detalle{
+    display: flex;
+    flex-direction: row;
+
+}
+.contenedor__detalle--info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: space-around;
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    font-size: 20px;
+    font-weight: bolder;
+    text-transform: capitalize;
+}
+.contenedor_detalle--stats{
+    display: grid;
+    grid-template-columns:  200px  200px  200px ;
+    grid-row: 50px;
+}
