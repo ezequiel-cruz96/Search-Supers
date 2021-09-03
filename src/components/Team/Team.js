@@ -3,13 +3,19 @@ import './Team.css'
 
 
 
-function Team({datos}){
+function Team({datos,seteo}){
 
     let alignment={
         good:"card-control-good",
         bad:"card-control-bad"
     }
 
+    function EliminarItem(id){
+        let CartNuevo= datos.filter((el)=>
+        el.id!==id
+        )
+        seteo(CartNuevo)
+      }
 
   
     return(
@@ -46,7 +52,7 @@ function Team({datos}){
                                        }
                                     </div> 
                                    
-                                   <button  type="button" className="btn btn-danger" >Remove</button>
+                                   <button  type="button" onClick={ () => EliminarItem(el.id) }  className="btn btn-danger" >Remove</button>
 
                                 </did> 
                             </div>  

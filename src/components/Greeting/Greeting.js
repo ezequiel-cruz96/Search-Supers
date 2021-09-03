@@ -7,32 +7,22 @@ import './Greeting.css';
 
 function Greeting(){
 
-    let [error, setError] = useState("");
 
+    let {addLogin,login}  = useContext(AppContext);
 
-    useEffect(() => {
-        const user = {
-            email: "challenge@alkemy.org",
+    let [token, setToken] =useState("");
+
+    if((login.email==="challenge@alkemy.org")&&(login.password==="react")){
+        axios.post('http://challenge-react.alkemy.org/', {
+            email: 'challenge@alkemy.org',
             password: "react",
-          };
-        fetch("http://challenge-react.alkemy.org/", {
-            method: 'POST',
-            request: {"Content-Type": "application/json"},
-            body: JSON.stringify(user)
-        })
-        .then(response => response.json()) 
-        .then(response => setError(response.error))
-        .catch(err => console.log(""))
-      }, []);
-
-
-
-let {addLogin,login}  = useContext(AppContext);
-
-if((login.email==="challenge@alkemy.org")&&(login.password==="react")){
-    localStorage.setItem("User",login.email);
-    localStorage.setItem("Password",login.password);
-}
+        }).then(response => {
+            setToken(response.data.token);
+        }).catch(e => {
+            alert("Api error")  
+        });
+        localStorage.setItem("token",token)  
+    }  
 
     return(
     <>
@@ -47,7 +37,7 @@ if((login.email==="challenge@alkemy.org")&&(login.password==="react")){
         addLogin(values) 
 
         if((values.email!=="challenge@alkemy.org")&&(values.email!=="")){
-            alert(error)  
+            alert("error")  
         }      
         if((values.password!=="react")&&(values.password!=="")){
             alert("Incorrect Password")  

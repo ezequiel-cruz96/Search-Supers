@@ -15,7 +15,7 @@ function Cart({superheroe}){
         axios.get(`https://www.superheroapi.com/api.php/10226516722893407/search/${superheroe}/`)
         .then((response) => setDatos(response.data.results) )
         .catch((error) => {
-          
+          console.log(error);
         })
     }, [superheroe])
 
@@ -24,7 +24,17 @@ function Cart({superheroe}){
         bad:"card-control-bad"
     }
 
-      function addTeam(add){
+    function EstadoCarrito (id) {
+        return team.some(item => item.id === id)
+      }
+
+      function addTeam(add,id){
+
+        let estado= EstadoCarrito(id)
+
+        if(estado){
+            return add
+        }
         let aux= [...team];
         aux.push(add);
         setTeam(aux)
@@ -67,7 +77,7 @@ function Cart({superheroe}){
                                         <button type="button" className="btn btn-primary">Detail</button>
                                         </Link>
                                    </div>
-                                   <button onClick={ () => addTeam(el) } type="button" className="btn btn-success">Add</button>
+                                   <button onClick={ () => addTeam(el,el.id) } type="button" className="btn btn-success">Add</button>
 
                                 </did> 
                             </div>  
@@ -82,7 +92,7 @@ function Cart({superheroe}){
 
 
             
-              <Team datos={team}/>
+              <Team datos={team} seteo={setTeam}/>
         
 
             
